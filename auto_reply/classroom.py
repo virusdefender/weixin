@@ -33,19 +33,19 @@ def get_class():
 
 #这个是通过api获取
 def get_classroom_api(classroom_name):
-    classroom_name_dic = {"boyuan": "博远楼", "bozhi": "博知楼", "boxue": "博学楼", "dong12": "东12"}
+    classroom_name_dic = {"boyuan": u"博远楼", "bozhi": u"博知楼", "boxue": u"博学楼", "dong12": u"东12"}
     url = "http://qduyzzdh2.duapp.com/classroom.php?building_name={classroom_name}&token=qddxtwwx".\
         format(classroom_name=classroom_name)
     try:
         response = urllib2.urlopen(url).read()
     except urllib2.URLError:
-        return "查询错误，请稍后重试！"
+        return u"查询错误，请稍后重试！"
 
     response_json = json.loads(response)
     #获取到的json应该是一个列表 然后每一个分列表都是一节课的时候的教室信息
     if str(response_json["error"]) == "0":
         class_num = get_class()
-        response_str = "根据当前时间   青小微为你找到下面这些自习室呦\n"
+        response_str = u"根据当前时间   青小微为你找到下面这些自习室呦\n"
         if class_num + 4 > 11:
             end_class = 11
         else:
@@ -54,11 +54,11 @@ def get_classroom_api(classroom_name):
             result = ""
             for room in response_json["result"][class_order - 1]:
                 result += (room + " ")
-            response_str = response_str + ("第{class_order}节：{result}\n".format(class_order=class_order, result=result))
+            response_str = response_str + (u"第{class_order}节：{result}\n".format(class_order=class_order, result=result))
     elif str(response_json["error"]) == "3":
-        return "周末啦，到处都是空教室，我就不给你查了~~快找个教室学习去吧~"
+        return u"周末啦，到处都是空教室，我就不给你查了~~快找个教室学习去吧~"
     else:
-        response_str = "查询错误，请稍后重试！"
+        response_str = u"查询错误，请稍后重试！"
     return response_str
 
 
