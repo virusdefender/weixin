@@ -1,0 +1,24 @@
+libraries:
+- name: "django"
+  version: "1.5"
+- name: "lxml"
+  version: "2.3.4"
+- name: "PyCrypto"
+  version: "2.6"
+- name: "PIL"
+  version: "1.7.7"
+handle:
+- errordoc: 500 /500/
+- compress: if ( out_header["Content-type"] ~ "text/css" ) compress
+- compress: if ( out_header["Content-type"] ~ "text/javascript" ) compress
+- compress: if ( out_header["Content-type"] ~ "text/html" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/jpeg" ) compress
+- compress: if ( out_header["Content-type"] ~ "image/png" ) compress
+- expire:  if( path ~ "*.js" ) time 3600
+- expire:  if( path ~ "*.css" ) time 3600
+- expire:  if( path ~ "*.jpg" ) time 3600
+- expire:  if( path ~ "*.png" ) time 3600
+handlers:
+- url: /static
+  static_dir: static
+
