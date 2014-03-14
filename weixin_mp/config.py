@@ -1,3 +1,3 @@
 #coding=utf-8
-WEIXIN_TOKEN = "virusdefender"
-WEIXIN_ID = "qddxtw"
+WEIXIN_TOKEN = "tokentoken"
+WEIXIN_ID = "weixin_id"
