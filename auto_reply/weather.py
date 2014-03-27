@@ -13,7 +13,7 @@ def get_air_quality():
 
 #获取天气http://developer.baidu.com/map/carapi-7.htm
 def get_weather(city="青岛"):
-    url = "http://api.map.baidu.com/telematics/v3/weather?location=%s&output=json&ak=bldsc4KQ5dvqj1T1YDxIDCmz" % city
+    url = u"http://api.map.baidu.com/telematics/v3/weather?location=%s&output=json&ak=bldsc4KQ5dvqj1T1YDxIDCmz" % city
     req = urllib2.Request(url)
     response = urllib2.urlopen(req)
     content = json.loads(response.read())
