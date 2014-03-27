@@ -8,8 +8,10 @@ weixin
 
 ----
 
-关于这个应用在sae上的部署，大致就是先在本地python manage.py syncdb之后，使用mysqldump命令导出sql文件，然后在sae里面
+这个应用在sae上的部署方法
 
-上传创建数据库。然后上传代码到服务器。
+先在本地python manage.py syncdb之后，使用mysqldump命令导出sql文件，然后是用svn上传，
+
+初始化数据库。然后上传sql文件建立数据路，记住，sql文件中要把所有的lock和unlock语句删掉。
 
 微信验证的url是 /weixin/
