@@ -55,10 +55,19 @@ views是这个文件夹中的文件名，views.py文件中，最后是函数名�
 ---
 获取天气预报
 *http://developer.baidu.com/map/carapi-7.htm*
-我的代码里面有key,可以直接去用。  
+我的代码里面有key,可以直接去用。 
+ 
 获取空气质量状况
 *http://www.pm25.in/*
 这个token比较难申请，我的代码里面的也可以直接去用。
+
+github样式丢失
+*185.31.16.184 github.global.ssl.fastly.net* 加host文件
+
+自定义菜单创建删除
+这个不用自己去写代码，使用微信自带的调试工具就可以。
+http://mp.weixin.qq.com/debug 使用那个就可以。
+
 
 
 
