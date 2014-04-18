@@ -85,7 +85,8 @@ def auto_reply(from_username, content):
         reply = reply[0]
 
     if reply.reply.reply_type == "action":
-        #test
+        #注意 这里将几个函数的调用硬编码在这里了 使用的时候请注意
+        #比如对应一个关键词的回复是action 你填写的是weather 然后就能执行到下面获取天气的函数中
         if reply.reply.action == "classroom":
             return text_reply_xml(from_username, get_classroom_api(reply.reply.parameter))
         elif reply.reply.action == "weather":
