@@ -9,7 +9,7 @@ weixin
 第一次使用请修改  https://github.com/virusdefender/weixin/blob/master/weixin_mp/config.py  里面的值。
 
 ----
-这个微信公众平台是单用户版的，没有注册登录功能，也只能同时供一个账号使用。
+    这个微信公众平台是单用户版的，没有注册登录功能，也只能同时供一个账号使用。
 ----
 这个应用在sae上的部署方法
 
